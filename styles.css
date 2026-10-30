@@ -270,6 +270,50 @@ p { margin: 0; }
 .cta p { position: relative; margin: 18px auto 0; max-width: 560px; color: var(--soft); font-size: 1.1rem; }
 .cta .hero__actions { position: relative; }
 
+/* Contacto */
+.cta--contact, .contact { position: relative; }
+.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: start; text-align: left; }
+.contact__info h2 { margin: 0; }
+.contact__info > p { margin: 18px 0 0; max-width: 460px; }
+.channels { list-style: none; padding: 0; margin: 32px 0 0; display: flex; flex-direction: column; gap: 12px; }
+.channel {
+  display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px;
+  background: rgba(6, 11, 25, .45); border: 1px solid var(--line-strong); transition: border-color .2s, background .2s;
+}
+.channel:hover { border-color: rgba(0, 194, 255, .45); background: rgba(0, 194, 255, .06); }
+.channel small { display: block; color: var(--muted); font-size: .8rem; }
+.channel strong { display: block; font-weight: 600; word-break: break-word; }
+.channel__icon { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; color: var(--accent); background: rgba(0, 194, 255, .12); }
+.channel__icon--wa { color: #34D399; background: rgba(16, 185, 129, .14); }
+.channel__icon svg, .wa-float svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+.form { display: flex; flex-direction: column; gap: 16px; padding: 28px; border-radius: 20px; background: rgba(6, 11, 25, .6); border: 1px solid var(--line-strong); }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field span { font-size: .88rem; font-weight: 500; color: var(--soft); }
+.field em { font-style: normal; color: var(--muted); font-weight: 400; }
+.field input, .field textarea {
+  width: 100%; padding: 12px 14px; border-radius: 12px; font: inherit; font-size: .98rem; color: #fff;
+  background: rgba(255, 255, 255, .04); border: 1px solid var(--line-strong); transition: border-color .2s, box-shadow .2s;
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(148, 163, 184, .6); }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0, 194, 255, .18); }
+.form__trap { display: none; }
+.form__submit { align-self: stretch; margin-top: 4px; border: 0; cursor: pointer; color: #fff; }
+.form__submit:disabled { opacity: .7; cursor: wait; transform: none; }
+.form__status { padding: 12px 14px; border-radius: 12px; font-size: .95rem; }
+.form__status.is-ok { color: #6EE7B7; background: rgba(16, 185, 129, .12); }
+.form__status.is-error { color: #FCA5A5; background: rgba(239, 68, 68, .12); }
+
+.wa-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; display: grid; place-items: center;
+  border-radius: 50%; color: #fff; background: #10B981; box-shadow: 0 14px 30px -10px rgba(16, 185, 129, .7);
+  transition: transform .2s ease, background .2s ease;
+}
+.wa-float:hover { transform: scale(1.08); background: #059669; }
+.wa-float svg { width: 30px; height: 30px; }
+
 /* Pie */
 .footer { border-top: 1px solid var(--line); background: var(--bg-deep); }
 .footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 36px 0; }
@@ -310,6 +354,7 @@ p { margin: 0; }
   .nav.is-open .nav__toggle span:nth-child(2) { opacity: 0; }
   .nav.is-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .why { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
   .hero { padding: 56px 0 48px; }
@@ -330,7 +375,10 @@ p { margin: 0; }
   .dash__kpis { grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 14px; }
   .dash__kpis div { padding: 10px; }
   .dash__kpis strong { font-size: 1.05rem; }
-  .cta { padding: 52px 20px; }
+  .cta { padding: 44px 18px; }
+  .form { padding: 20px; }
+  .form__row { grid-template-columns: 1fr; }
+  .wa-float { right: 16px; bottom: 16px; width: 52px; height: 52px; }
   .footer__inner { flex-direction: column; text-align: center; }
   .footer__links { justify-content: center; }
 }
